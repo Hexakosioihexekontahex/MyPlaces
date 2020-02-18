@@ -38,9 +38,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbE-9p-qdr">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbE-9p-qdr">
                                             <rect key="frame" x="95" y="35" width="299" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -56,11 +55,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="IbE-9p-qdr" firstAttribute="leading" secondItem="NJW-VW-aj1" secondAttribute="leading" id="Kno-FX-501"/>
                                         <constraint firstItem="BID-vW-hkf" firstAttribute="leading" secondItem="2lC-Vf-tfE" secondAttribute="leading" constant="15" id="NIM-MT-Fi1"/>
                                         <constraint firstItem="5d3-yt-zW9" firstAttribute="leading" secondItem="BID-vW-hkf" secondAttribute="trailing" constant="15" id="UjQ-Xy-hbI"/>
                                         <constraint firstItem="NJW-VW-aj1" firstAttribute="leading" secondItem="BID-vW-hkf" secondAttribute="trailing" constant="15" id="bIh-m5-L0z"/>
                                         <constraint firstItem="5d3-yt-zW9" firstAttribute="top" secondItem="2lC-Vf-tfE" secondAttribute="top" constant="9" id="ddB-gt-52m"/>
+                                        <constraint firstItem="IbE-9p-qdr" firstAttribute="trailing" secondItem="NJW-VW-aj1" secondAttribute="trailing" id="khK-Uh-SCR"/>
                                         <constraint firstAttribute="trailing" secondItem="5d3-yt-zW9" secondAttribute="trailing" constant="20" id="luF-kK-x5c"/>
+                                        <constraint firstItem="IbE-9p-qdr" firstAttribute="top" secondItem="5d3-yt-zW9" secondAttribute="bottom" constant="5" id="rNI-3L-hcG"/>
                                         <constraint firstItem="NJW-VW-aj1" firstAttribute="trailing" secondItem="2lC-Vf-tfE" secondAttribute="trailingMargin" id="v5p-27-MPV"/>
                                         <constraint firstItem="BID-vW-hkf" firstAttribute="centerY" secondItem="2lC-Vf-tfE" secondAttribute="centerY" id="z0Z-hx-NOn"/>
                                         <constraint firstItem="NJW-VW-aj1" firstAttribute="bottom" secondItem="2lC-Vf-tfE" secondAttribute="bottomMargin" id="z9j-JS-04N"/>
