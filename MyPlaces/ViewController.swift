@@ -47,7 +47,11 @@ class MainViewController: UITableViewController {
 //        <#code#>
 //    }
     
+    // MARK: - Navigation
     
+    @IBAction func cancelAction(_ seque: UIStoryboardSegue) {
+        
+    }
     
 }
 
