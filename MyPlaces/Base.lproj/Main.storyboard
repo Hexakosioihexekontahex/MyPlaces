@@ -235,13 +235,21 @@
                     <navigationItem key="navigationItem" title="New place" id="JqJ-s7-9ft">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="YOX-xm-ht6">
                             <connections>
-                                <segue destination="Mio-69-Byr" kind="unwind" unwindAction="cancelAction:" id="tkk-5G-Gwo"/>
+                                <action selector="cancelAction:" destination="cLT-S9-c9I" id="ItI-8Z-rVJ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aKj-kw-qVz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="aKj-kw-qVz">
+                            <connections>
+                                <segue destination="Mio-69-Byr" kind="unwind" unwindAction="unwindSegue:" id="kkk-Wx-LH6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="imageOfPlace" destination="tqO-IY-4ld" id="mYh-DZ-XiI"/>
+                        <outlet property="placeImage" destination="tqO-IY-4ld" id="mYh-DZ-XiI"/>
+                        <outlet property="placeLocation" destination="JWu-vh-V9L" id="yMz-Aa-8tG"/>
+                        <outlet property="placeName" destination="Crf-h7-8xC" id="xPZ-46-qrA"/>
+                        <outlet property="placeType" destination="3SI-C8-nou" id="fXs-HW-B0d"/>
+                        <outlet property="saveButton" destination="aKj-kw-qVz" id="9FQ-T7-8mh"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kFg-2O-0ow" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
