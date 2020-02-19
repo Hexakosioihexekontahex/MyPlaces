@@ -15,6 +15,7 @@
 		DBC1BDE423FBD47900DD89B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBC1BDE223FBD47900DD89B1 /* LaunchScreen.storyboard */; };
 		DBC1BDEC23FC25CF00DD89B1 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDEB23FC25CF00DD89B1 /* CustomTableViewCell.swift */; };
 		DBC1BDEE23FC2D6400DD89B1 /* PlaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */; };
+		DBC1BDF023FD4B5D00DD89B1 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		DBC1BDE523FBD47900DD89B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DBC1BDEB23FC25CF00DD89B1 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
+		DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				DBC1BDE523FBD47900DD89B1 /* Info.plist */,
 				DBC1BDEB23FC25CF00DD89B1 /* CustomTableViewCell.swift */,
 				DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */,
+				DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */,
 			);
 			path = MyPlaces;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DBC1BDDC23FBD47700DD89B1 /* ViewController.swift in Sources */,
+				DBC1BDF023FD4B5D00DD89B1 /* NewPlaceViewController.swift in Sources */,
 				DBC1BDD823FBD47700DD89B1 /* AppDelegate.swift in Sources */,
 				DBC1BDEE23FC2D6400DD89B1 /* PlaceModel.swift in Sources */,
 				DBC1BDEC23FC25CF00DD89B1 /* CustomTableViewCell.swift in Sources */,
