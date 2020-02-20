@@ -253,7 +253,7 @@
                                 </connections>
                             </tableView>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="mqv-tA-Hqa">
-                                <rect key="frame" x="0.0" y="88" width="414" height="39"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="32"/>
                                 <segments>
                                     <segment title="Date"/>
                                     <segment title="Name"/>
@@ -266,9 +266,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="mqv-tA-Hqa" firstAttribute="top" secondItem="7nj-3B-7Jc" secondAttribute="top" id="48x-3p-oIY"/>
-                            <constraint firstItem="7nj-3B-7Jc" firstAttribute="trailing" secondItem="mqv-tA-Hqa" secondAttribute="trailing" id="Hyh-Td-hzr"/>
                             <constraint firstItem="mqv-tA-Hqa" firstAttribute="leading" secondItem="7nj-3B-7Jc" secondAttribute="leading" id="RsS-7u-BHm"/>
-                            <constraint firstItem="o5Y-mx-0fo" firstAttribute="top" secondItem="mqv-tA-Hqa" secondAttribute="bottom" constant="1" id="Y23-eG-Ut0"/>
+                            <constraint firstItem="7nj-3B-7Jc" firstAttribute="trailing" secondItem="mqv-tA-Hqa" secondAttribute="trailing" id="rRd-LR-j1F"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7nj-3B-7Jc"/>
                     </view>
