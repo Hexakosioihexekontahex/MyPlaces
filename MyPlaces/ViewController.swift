@@ -44,6 +44,23 @@ class MainViewController: UITableViewController {
         
         return cell
     }
+    
+    // MARK: Table view delegate
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//        <#code#>
+//    }
+    
+    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let place = places[indexPath.row]
+        let deleteAction = UISwipeActionsConfiguration(actions: [UIContextualAction(style: .destructive, title: "Delete", handler: {_,_,_  in
+            StorageManager.deleteObject(place)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        })])
+        
+        return deleteAction
+    }
+    
+    
 
 
 //    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
