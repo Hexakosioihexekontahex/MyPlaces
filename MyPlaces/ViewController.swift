@@ -16,20 +16,20 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private var filteredPlaces: Results<Place>!
     private var ascendingSorting = true
     private var searchBarIsEmpty: Bool {
-        guard let text = searchController.searchBar.text else { return false }
+        guard let text = searchController.searchBar.text else { return true }
         return text.isEmpty
     }
     private var isFiltering: Bool {
         return searchController.isActive && !searchBarIsEmpty
     }
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var segmentedControl: UISegmentedControl!
-    @IBOutlet weak var reversedSortingButton: UIBarButtonItem!
-    
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var reversedSortingButton: UIBarButtonItem!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         places = realm.objects(Place.self)
         
         //Setup the search controller
@@ -43,20 +43,16 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         tableView.tableHeaderView = nil // hiding searchBar when init (https://www.reddit.com/r/swift/comments/7ptd8o/hide_search_bar_at_the_top_of_tableview/)
     }
-    
+
     // MARK: - Table view data source
-    
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        return 1 // default
-//    }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering {
             return filteredPlaces.count
         }
         return places.isEmpty ? 0 : places.count
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
@@ -75,14 +71,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         cell.imageOfPlace.layer.cornerRadius = cell.imageOfPlace.frame.size.height / 2
         cell.imageOfPlace.clipsToBounds = true
-        
+
         return cell
     }
     
     // MARK: Table view delegate
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//        <#code#>
-//    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
@@ -97,8 +90,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         return deleteAction
     }
-    
-    
+
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -116,22 +108,23 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     @IBAction func unwindSegue(_ segue: UIStoryboardSegue) {
+        
         guard let newPlaceVC = segue.source as? NewPlaceViewController else { return }
         
         newPlaceVC.savePlace()
         tableView.reloadData()
-        
     }
+
     @IBAction func sortSelection(_ sender: UISegmentedControl) {
         
         sorting()
     }
     
-    @IBAction func reversedSorting(_ sender: UIBarButtonItem) {
+    @IBAction func reversedSorting(_ sender: Any) {
         
         ascendingSorting.toggle()
         
-        if ascendingSorting == true {
+        if ascendingSorting {
             reversedSortingButton.image = #imageLiteral(resourceName: "AZ")
         } else {
             reversedSortingButton.image = #imageLiteral(resourceName: "ZA")
@@ -141,6 +134,7 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
     }
     
     private func sorting() {
+        
         if segmentedControl.selectedSegmentIndex == 0 {
             places = places.sorted(byKeyPath: "date", ascending: ascendingSorting)
         } else {
@@ -159,16 +153,9 @@ extension MainViewController: UISearchResultsUpdating {
     
     private func filterContentForSearchText(_ searchText: String) {
         
-        filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@ OR type CONTAINS[c] %@", searchText, searchText, searchText)
+        filteredPlaces = places.filter("name CONTAINS[c] %@ OR location CONTAINS[c] %@", searchText, searchText)
         
         tableView.reloadData()
     }
-    
 }
-
-//extension MainViewController: UISearchBarDelegate {
-//    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        self.searchController.searchBar.isHidden = true
-//    }
-//}
 
