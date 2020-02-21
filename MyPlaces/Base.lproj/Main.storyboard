@@ -228,39 +228,56 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Gpu-N4-FXF">
-                                                    <rect key="frame" x="96" y="8" width="302" height="69"/>
+                                                    <rect key="frame" x="96" y="8" width="212" height="69"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Zf-sr-uqU">
-                                                            <rect key="frame" x="0.0" y="0.0" width="302" height="25.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="212" height="25.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wPL-2r-YtI">
-                                                            <rect key="frame" x="0.0" y="27.5" width="302" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="27.5" width="212" height="20.5"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3dl-Wh-3Hj">
-                                                            <rect key="frame" x="0.0" y="50" width="302" height="19"/>
+                                                            <rect key="frame" x="0.0" y="50" width="212" height="19"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="13"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" placeholderIntrinsicWidth="90" placeholderIntrinsicHeight="14" translatesAutoresizingMaskIntoConstraints="NO" id="mIf-M6-9BA" customClass="CosmosView" customModule="Cosmos">
+                                                    <rect key="frame" x="316" y="35.5" width="90" height="14"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="90" id="q07-nk-ZAG"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                            <real key="value" value="14"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="filledImage" value="filledStar"/>
+                                                        <userDefinedRuntimeAttribute type="image" keyPath="emptyImage" value="emptyStar"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Gpu-N4-FXF" firstAttribute="top" secondItem="MVm-ZQ-4ce" secondAttribute="top" constant="8" id="4GD-2b-fcJ"/>
                                                 <constraint firstItem="Gpu-N4-FXF" firstAttribute="leading" secondItem="iqA-Af-ID4" secondAttribute="trailing" constant="16" id="OOK-PD-hHU"/>
                                                 <constraint firstAttribute="bottom" secondItem="Gpu-N4-FXF" secondAttribute="bottom" constant="8" id="One-Mv-aF1"/>
-                                                <constraint firstAttribute="trailing" secondItem="Gpu-N4-FXF" secondAttribute="trailing" constant="16" id="VEX-3l-Cm2"/>
+                                                <constraint firstAttribute="trailing" secondItem="mIf-M6-9BA" secondAttribute="trailing" constant="8" id="QXb-vX-mtp"/>
+                                                <constraint firstItem="mIf-M6-9BA" firstAttribute="leading" secondItem="Gpu-N4-FXF" secondAttribute="trailing" constant="8" id="Uwv-fM-yMK"/>
                                                 <constraint firstItem="iqA-Af-ID4" firstAttribute="centerY" secondItem="MVm-ZQ-4ce" secondAttribute="centerY" id="aWH-hR-Ft4"/>
+                                                <constraint firstItem="mIf-M6-9BA" firstAttribute="centerY" secondItem="MVm-ZQ-4ce" secondAttribute="centerY" id="dEb-DK-Jgv"/>
                                                 <constraint firstItem="iqA-Af-ID4" firstAttribute="leading" secondItem="MVm-ZQ-4ce" secondAttribute="leading" constant="15" id="wPp-lF-bri"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cosmosView" destination="mIf-M6-9BA" id="krU-et-woi"/>
                                             <outlet property="imageOfPlace" destination="iqA-Af-ID4" id="uLl-Jc-y1Z"/>
                                             <outlet property="locationLabel" destination="wPL-2r-YtI" id="4FL-qY-GxK"/>
                                             <outlet property="nameLabel" destination="1Zf-sr-uqU" id="5Nz-bM-rAt"/>
@@ -359,6 +376,8 @@
     <resources>
         <image name="AZ" width="25" height="24"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="emptyStar" width="255" height="256"/>
+        <image name="filledStar" width="237.5" height="238"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="hdK-hC-2Xo"/>
