@@ -27,7 +27,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Photo" translatesAutoresizingMaskIntoConstraints="NO" id="tqO-IY-4ld">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="250.00000000000006"/>
                                                 </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PGj-XZ-rfW">
                                                     <rect key="frame" x="344" y="189" width="50" height="50"/>
@@ -37,7 +37,7 @@
                                                     </constraints>
                                                     <state key="normal" image="map"/>
                                                     <connections>
-                                                        <segue destination="aQL-bg-2wn" kind="presentation" identifier="showMap" id="cBw-Cr-gRi"/>
+                                                        <segue destination="aQL-bg-2wn" kind="presentation" identifier="showPlace" id="cBw-Cr-gRi"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -95,16 +95,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-fw-8Z7">
-                                                    <rect key="frame" x="16" y="8" width="382" height="63"/>
+                                                    <rect key="frame" x="16" y="8" width="348" height="63"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUT-mf-fY8">
-                                                            <rect key="frame" x="0.0" y="0.0" width="382" height="32"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="348" height="32"/>
                                                             <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="20"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="bottom" placeholder="Place location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JWu-vh-V9L">
-                                                            <rect key="frame" x="0.0" y="32" width="382" height="31"/>
+                                                            <rect key="frame" x="0.0" y="32" width="348" height="31"/>
                                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="19"/>
                                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
                                                             <connections>
@@ -113,11 +113,24 @@
                                                         </textField>
                                                     </subviews>
                                                 </stackView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zdz-zt-cDk">
+                                                    <rect key="frame" x="372" y="44.5" width="22" height="22"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="22" id="Ad3-Hf-1Kd"/>
+                                                        <constraint firstAttribute="width" constant="22" id="CqI-gZ-nxi"/>
+                                                    </constraints>
+                                                    <state key="normal" image="Placeholder"/>
+                                                    <connections>
+                                                        <segue destination="aQL-bg-2wn" kind="presentation" identifier="getAddress" id="z5V-hJ-ke8"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="ajn-fw-8Z7" secondAttribute="trailing" constant="16" id="RQ8-o5-B4V"/>
+                                                <constraint firstItem="Zdz-zt-cDk" firstAttribute="leading" secondItem="ajn-fw-8Z7" secondAttribute="trailing" constant="8" id="7Yz-YN-6lp"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Zdz-zt-cDk" secondAttribute="trailing" id="QgG-b3-QfI"/>
                                                 <constraint firstItem="ajn-fw-8Z7" firstAttribute="top" secondItem="GWp-Nz-Oz7" secondAttribute="top" constant="8" id="enN-dy-8MB"/>
                                                 <constraint firstAttribute="bottom" secondItem="ajn-fw-8Z7" secondAttribute="bottom" constant="4" id="lpk-u4-KV1"/>
+                                                <constraint firstItem="Zdz-zt-cDk" firstAttribute="centerY" secondItem="JWu-vh-V9L" secondAttribute="centerY" id="pw4-Hl-hxY"/>
                                                 <constraint firstItem="ajn-fw-8Z7" firstAttribute="leading" secondItem="GWp-Nz-Oz7" secondAttribute="leading" constant="16" id="rVC-5n-uKn"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -246,27 +259,59 @@
                                     <action selector="centerViewInUserLocation" destination="aQL-bg-2wn" eventType="touchUpInside" id="mXj-vk-lyx"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Pin" translatesAutoresizingMaskIntoConstraints="NO" id="Yfx-uK-goZ">
+                                <rect key="frame" x="187" y="381" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sJ5-7W-rRT"/>
+                                    <constraint firstAttribute="width" constant="40" id="uM8-DI-LfK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="12c-H9-uMW">
+                                <rect key="frame" x="20" y="137.5" width="374" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-iC-6i4">
+                                <rect key="frame" x="173" y="729" width="69" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButtonPressed" destination="aQL-bg-2wn" eventType="touchUpInside" id="Ay1-7d-Mpq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="IPv-64-MOu" firstAttribute="top" secondItem="5hA-dv-JT2" secondAttribute="top" id="5Wc-Zx-KiB"/>
                             <constraint firstItem="3Vq-By-xsx" firstAttribute="top" secondItem="or9-59-Xuv" secondAttribute="top" constant="40" id="7y7-3c-S80"/>
+                            <constraint firstItem="12c-H9-uMW" firstAttribute="leading" secondItem="5hA-dv-JT2" secondAttribute="leadingMargin" id="Ev3-Ln-41n"/>
                             <constraint firstItem="or9-59-Xuv" firstAttribute="bottom" secondItem="eQJ-WI-Ssm" secondAttribute="bottom" constant="40" id="HVD-61-SWq"/>
+                            <constraint firstItem="Yfx-uK-goZ" firstAttribute="centerY" secondItem="IPv-64-MOu" secondAttribute="centerY" constant="-20" id="JCe-Ii-Ios"/>
                             <constraint firstItem="or9-59-Xuv" firstAttribute="trailing" secondItem="3Vq-By-xsx" secondAttribute="trailing" constant="40" id="Jq5-ll-0bb"/>
+                            <constraint firstItem="IPv-64-MOu" firstAttribute="top" secondItem="12c-H9-uMW" secondAttribute="bottom" constant="-169" id="LPp-6K-Bwu"/>
                             <constraint firstAttribute="bottom" secondItem="IPv-64-MOu" secondAttribute="bottom" id="TR8-vO-09M"/>
+                            <constraint firstItem="IPv-64-MOu" firstAttribute="top" secondItem="12c-H9-uMW" secondAttribute="bottom" constant="-169" id="W6F-bl-CHB"/>
                             <constraint firstItem="IPv-64-MOu" firstAttribute="trailing" secondItem="or9-59-Xuv" secondAttribute="trailing" id="Ysf-CE-SgB"/>
                             <constraint firstItem="or9-59-Xuv" firstAttribute="trailing" secondItem="eQJ-WI-Ssm" secondAttribute="trailing" constant="40" id="gJ3-ff-1oJ"/>
+                            <constraint firstItem="VZq-iC-6i4" firstAttribute="centerX" secondItem="IPv-64-MOu" secondAttribute="centerX" id="iGQ-1b-r0g"/>
+                            <constraint firstItem="12c-H9-uMW" firstAttribute="centerX" secondItem="Yfx-uK-goZ" secondAttribute="centerX" id="kk9-7z-dSL"/>
+                            <constraint firstItem="Yfx-uK-goZ" firstAttribute="centerX" secondItem="IPv-64-MOu" secondAttribute="centerX" id="krX-4N-Qnh"/>
+                            <constraint firstItem="VZq-iC-6i4" firstAttribute="top" secondItem="IPv-64-MOu" secondAttribute="bottom" constant="-113" id="qzc-tO-nzr"/>
                             <constraint firstItem="IPv-64-MOu" firstAttribute="leading" secondItem="or9-59-Xuv" secondAttribute="leading" id="vjg-qX-WzR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="or9-59-Xuv"/>
                     </view>
                     <connections>
+                        <outlet property="addressLabel" destination="12c-H9-uMW" id="S7l-ih-aNT"/>
+                        <outlet property="doneButton" destination="VZq-iC-6i4" id="8sd-gy-eg6"/>
+                        <outlet property="mapPinImage" destination="Yfx-uK-goZ" id="VMY-ad-n5C"/>
                         <outlet property="mapView" destination="IPv-64-MOu" id="AxX-72-peq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l6I-kR-a1v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2076.8115942028985" y="93.75"/>
+            <point key="canvasLocation" x="2075.36231884058" y="93.75"/>
         </scene>
         <!--MyPlaces-->
         <scene sceneID="TAP-Jp-k0y">
@@ -445,12 +490,15 @@
         <image name="AZ" width="25" height="24"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
+        <image name="Pin" width="42" height="42"/>
+        <image name="Placeholder" width="22" height="22"/>
         <image name="cancel" width="128" height="128"/>
         <image name="emptyStar" width="255" height="256"/>
         <image name="filledStar" width="237.5" height="238"/>
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="cBw-Cr-gRi"/>
         <segue reference="hdK-hC-2Xo"/>
     </inferredMetricsTieBreakers>
 </document>
