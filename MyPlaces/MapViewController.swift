@@ -15,6 +15,7 @@ class MapViewController: UIViewController {
     var place = Place()
     let annotationIdentifier = "annotationIdentifier"
     let locationManager = CLLocationManager()
+    let regionInMeters = 10000.0
 
     @IBOutlet weak var mapView: MKMapView!
     
@@ -30,6 +31,16 @@ class MapViewController: UIViewController {
 
     @IBAction func closeVC() {
         dismiss(animated: true)
+    }
+    
+    @IBAction func centerViewInUserLocation() {
+        
+        if let location = locationManager.location?.coordinate {
+            let region = MKCoordinateRegion(center: location,
+                                            latitudinalMeters: regionInMeters,
+                                            longitudinalMeters: regionInMeters)
+            mapView.setRegion(region, animated: true)
+        }
     }
     
     private func setupPlaceMark() {
@@ -66,10 +77,13 @@ class MapViewController: UIViewController {
             setupLocationManager()
             checkLocationAuthorization()
         } else {
-            // create AlertController and call it
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Location Services are Disabled",
+                    message: "To enable it go: Settings -> Privacy -> Location Services and turn On"
+                )
+            }
         }
-        
-        
     }
     
     private func setupLocationManager() {
@@ -83,19 +97,32 @@ class MapViewController: UIViewController {
             mapView.showsUserLocation = true
             break
         case .denied:
-            // Show alert controller
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                self.showAlert(
+                    title: "Your Location is not Available",
+                    message: "To give permission Go to: Setting -> MyPlaces -> Location"
+                )
+            }
             break
         case .notDetermined:
             locationManager.requestWhenInUseAuthorization()
             break
         case .restricted:
-            // Show alert controller
             break
         case .authorizedAlways:
             break
         @unknown default:
             print("New case is available")
         }
+    }
+    
+    private func showAlert(title: String, message: String) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(okAction)
+        present(alert, animated: true)
     }
 }
 
