@@ -19,6 +19,7 @@
 		DBC1BDF023FD4B5D00DD89B1 /* NewPlaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */; };
 		DBC1BDF223FD736A00DD89B1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */; };
 		DBC1BDF423FF237100DD89B1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF323FF237100DD89B1 /* RatingControl.swift */; };
+		DBC1BDF623FFFDB800DD89B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		DBC1BDF323FF237100DD89B1 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 				DBC1BDD723FBD47700DD89B1 /* AppDelegate.swift */,
 				DBC1BDD923FBD47700DD89B1 /* SceneDelegate.swift */,
 				DBC1BDDB23FBD47700DD89B1 /* ViewController.swift */,
+				DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */,
 				DBC1BDDD23FBD47700DD89B1 /* Main.storyboard */,
 				DBC1BDE023FBD47900DD89B1 /* Assets.xcassets */,
 				DBC1BDE223FBD47900DD89B1 /* LaunchScreen.storyboard */,
@@ -225,6 +228,7 @@
 				DBC1BDF023FD4B5D00DD89B1 /* NewPlaceViewController.swift in Sources */,
 				DBC1BDD823FBD47700DD89B1 /* AppDelegate.swift in Sources */,
 				DBC1BDF223FD736A00DD89B1 /* StorageManager.swift in Sources */,
+				DBC1BDF623FFFDB800DD89B1 /* MapViewController.swift in Sources */,
 				DBC1BDF423FF237100DD89B1 /* RatingControl.swift in Sources */,
 				DBC1BDEE23FC2D6400DD89B1 /* PlaceModel.swift in Sources */,
 				DBC1BDEC23FC25CF00DD89B1 /* CustomTableViewCell.swift in Sources */,
