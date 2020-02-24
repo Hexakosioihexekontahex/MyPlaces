@@ -273,11 +273,22 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VZq-iC-6i4">
-                                <rect key="frame" x="173" y="729" width="69" height="48"/>
+                                <rect key="frame" x="172.5" y="729" width="69" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Done"/>
                                 <connections>
                                     <action selector="doneButtonPressed" destination="aQL-bg-2wn" eventType="touchUpInside" id="Ay1-7d-Mpq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfE-ZW-KYs">
+                                <rect key="frame" x="182" y="718" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="HYT-Ol-fNY"/>
+                                    <constraint firstAttribute="height" constant="50" id="v09-Pb-oJR"/>
+                                </constraints>
+                                <state key="normal" image="GetDirection"/>
+                                <connections>
+                                    <action selector="goButtonPressed" destination="aQL-bg-2wn" eventType="touchUpInside" id="g8b-VS-dCx"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -293,7 +304,9 @@
                             <constraint firstAttribute="bottom" secondItem="IPv-64-MOu" secondAttribute="bottom" id="TR8-vO-09M"/>
                             <constraint firstItem="IPv-64-MOu" firstAttribute="top" secondItem="12c-H9-uMW" secondAttribute="bottom" constant="-169" id="W6F-bl-CHB"/>
                             <constraint firstItem="IPv-64-MOu" firstAttribute="trailing" secondItem="or9-59-Xuv" secondAttribute="trailing" id="Ysf-CE-SgB"/>
+                            <constraint firstItem="mfE-ZW-KYs" firstAttribute="centerX" secondItem="IPv-64-MOu" secondAttribute="centerX" id="aVt-Hs-uoO"/>
                             <constraint firstItem="or9-59-Xuv" firstAttribute="trailing" secondItem="eQJ-WI-Ssm" secondAttribute="trailing" constant="40" id="gJ3-ff-1oJ"/>
+                            <constraint firstItem="or9-59-Xuv" firstAttribute="bottom" secondItem="mfE-ZW-KYs" secondAttribute="bottom" constant="40" id="hUu-AU-J7E"/>
                             <constraint firstItem="VZq-iC-6i4" firstAttribute="centerX" secondItem="IPv-64-MOu" secondAttribute="centerX" id="iGQ-1b-r0g"/>
                             <constraint firstItem="12c-H9-uMW" firstAttribute="centerX" secondItem="Yfx-uK-goZ" secondAttribute="centerX" id="kk9-7z-dSL"/>
                             <constraint firstItem="Yfx-uK-goZ" firstAttribute="centerX" secondItem="IPv-64-MOu" secondAttribute="centerX" id="krX-4N-Qnh"/>
@@ -305,6 +318,7 @@
                     <connections>
                         <outlet property="addressLabel" destination="12c-H9-uMW" id="S7l-ih-aNT"/>
                         <outlet property="doneButton" destination="VZq-iC-6i4" id="8sd-gy-eg6"/>
+                        <outlet property="goButton" destination="mfE-ZW-KYs" id="5G4-ZM-He4"/>
                         <outlet property="mapPinImage" destination="Yfx-uK-goZ" id="VMY-ad-n5C"/>
                         <outlet property="mapView" destination="IPv-64-MOu" id="AxX-72-peq"/>
                     </connections>
@@ -488,6 +502,7 @@
     </scenes>
     <resources>
         <image name="AZ" width="25" height="24"/>
+        <image name="GetDirection" width="50" height="50"/>
         <image name="Location" width="128" height="128"/>
         <image name="Photo" width="195" height="196"/>
         <image name="Pin" width="42" height="42"/>
@@ -498,7 +513,7 @@
         <image name="map" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="cBw-Cr-gRi"/>
+        <segue reference="z5V-hJ-ke8"/>
         <segue reference="hdK-hC-2Xo"/>
     </inferredMetricsTieBreakers>
 </document>
