@@ -94,7 +94,6 @@ class NewPlaceViewController: UITableViewController {
     func savePlace() {
         
         let image = imageIsChanged ? placeImage.image : #imageLiteral(resourceName: "imagePlaceholder")
-        
         let imageData = image?.pngData()
         
         let newPlace = Place(name: placeName.text!,
@@ -200,5 +199,4 @@ extension NewPlaceViewController: MapViewControllerDelegate {
     func getAddress(_ address: String?) {
         placeLocation.text = address
     }
-    
 }

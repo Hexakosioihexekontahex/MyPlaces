@@ -20,6 +20,7 @@
 		DBC1BDF223FD736A00DD89B1 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */; };
 		DBC1BDF423FF237100DD89B1 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF323FF237100DD89B1 /* RatingControl.swift */; };
 		DBC1BDF623FFFDB800DD89B1 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */; };
+		DBC1BDF82403FCA500DD89B1 /* MapManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBC1BDF72403FCA500DD89B1 /* MapManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +39,9 @@
 		DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceModel.swift; sourceTree = "<group>"; };
 		DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPlaceViewController.swift; sourceTree = "<group>"; };
 		DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		DBC1BDF323FF237100DD89B1 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		DBC1BDF323FF237100DD89B1 /* RatingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RatingControl.swift; path = ../RatingControl.swift; sourceTree = "<group>"; };
 		DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		DBC1BDF72403FCA500DD89B1 /* MapManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,21 +94,62 @@
 		DBC1BDD623FBD47700DD89B1 /* MyPlaces */ = {
 			isa = PBXGroup;
 			children = (
-				DBC1BDD723FBD47700DD89B1 /* AppDelegate.swift */,
-				DBC1BDD923FBD47700DD89B1 /* SceneDelegate.swift */,
-				DBC1BDDB23FBD47700DD89B1 /* ViewController.swift */,
-				DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */,
-				DBC1BDDD23FBD47700DD89B1 /* Main.storyboard */,
-				DBC1BDE023FBD47900DD89B1 /* Assets.xcassets */,
-				DBC1BDE223FBD47900DD89B1 /* LaunchScreen.storyboard */,
 				DBC1BDE523FBD47900DD89B1 /* Info.plist */,
-				DBC1BDEB23FC25CF00DD89B1 /* CustomTableViewCell.swift */,
-				DBC1BDF323FF237100DD89B1 /* RatingControl.swift */,
-				DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */,
-				DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */,
-				DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */,
+				DBC1BDF92404030800DD89B1 /* Helpers */,
+				DBC1BDFF240403C500DD89B1 /* IBuilder */,
+				DBC1BDFE2404039200DD89B1 /* ViewControllers */,
+				DBC1BDFC2404035800DD89B1 /* Models */,
 			);
 			path = MyPlaces;
+			sourceTree = "<group>";
+		};
+		DBC1BDF92404030800DD89B1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1BDE023FBD47900DD89B1 /* Assets.xcassets */,
+				DBC1BDF323FF237100DD89B1 /* RatingControl.swift */,
+				DBC1BDF72403FCA500DD89B1 /* MapManager.swift */,
+				DBC1BDF123FD736A00DD89B1 /* StorageManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DBC1BDFC2404035800DD89B1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1BDED23FC2D6400DD89B1 /* PlaceModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DBC1BDFE2404039200DD89B1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1BDDB23FBD47700DD89B1 /* ViewController.swift */,
+				DBC1BDF523FFFDB800DD89B1 /* MapViewController.swift */,
+				DBC1BDEB23FC25CF00DD89B1 /* CustomTableViewCell.swift */,
+				DBC1BDEF23FD4B5D00DD89B1 /* NewPlaceViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		DBC1BDFF240403C500DD89B1 /* IBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1BE00240403D900DD89B1 /* Base.Iproj */,
+			);
+			path = IBuilder;
+			sourceTree = "<group>";
+		};
+		DBC1BE00240403D900DD89B1 /* Base.Iproj */ = {
+			isa = PBXGroup;
+			children = (
+				DBC1BDD723FBD47700DD89B1 /* AppDelegate.swift */,
+				DBC1BDDD23FBD47700DD89B1 /* Main.storyboard */,
+				DBC1BDE223FBD47900DD89B1 /* LaunchScreen.storyboard */,
+				DBC1BDD923FBD47700DD89B1 /* SceneDelegate.swift */,
+			);
+			path = Base.Iproj;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,6 +273,7 @@
 				DBC1BDF223FD736A00DD89B1 /* StorageManager.swift in Sources */,
 				DBC1BDF623FFFDB800DD89B1 /* MapViewController.swift in Sources */,
 				DBC1BDF423FF237100DD89B1 /* RatingControl.swift in Sources */,
+				DBC1BDF82403FCA500DD89B1 /* MapManager.swift in Sources */,
 				DBC1BDEE23FC2D6400DD89B1 /* PlaceModel.swift in Sources */,
 				DBC1BDEC23FC25CF00DD89B1 /* CustomTableViewCell.swift in Sources */,
 				DBC1BDDA23FBD47700DD89B1 /* SceneDelegate.swift in Sources */,

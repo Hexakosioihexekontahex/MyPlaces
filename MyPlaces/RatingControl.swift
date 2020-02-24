@@ -25,34 +25,32 @@ import UIKit
             setupButtons()
         }
     }
+    
     @IBInspectable var starCount: Int = 5 {
-           didSet {
-               setupButtons()
-           }
-       }
+        didSet {
+            setupButtons()
+        }
+    }
 
-    //MARK: Initialization
+    // MARK: Initialization
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupButtons()
     }
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
-        
         setupButtons()
     }
     
     // MARK: Button Action
     
     @objc func ratingButtonTapped(button: UIButton) {
-        
         guard let index = ratingButtons.firstIndex(of: button) else { return }
         
-        // Calculate the rating of the selected button
         let selectedRating = index + 1
+        
         if selectedRating == rating {
             rating = 0
         } else {
@@ -73,6 +71,7 @@ import UIKit
         
         // Load button image
         let bundle = Bundle(for: type(of: self))
+        
         let filledStar = UIImage(named: "filledStar",
                                  in: bundle,
                                  compatibleWith: self.traitCollection)
@@ -86,25 +85,31 @@ import UIKit
                                       compatibleWith: self.traitCollection)
         
         
-        for _ in 0 ..< starCount {
+        
+        for _ in 0..<starCount {
             
-
-            let btn = UIButton()
+            // Create the button
+            let button = UIButton()
             
-            btn.setImage(emptyStar, for: .normal)
-            btn.setImage(filledStar, for: .selected)
-            btn.setImage(highlightedStar, for: .highlighted)
-            btn.setImage(highlightedStar, for: [.highlighted, .selected])
+            // Set the button image
+            button.setImage(emptyStar, for: .normal)
+            button.setImage(filledStar, for: .selected)
+            button.setImage(highlightedStar, for: .highlighted)
+            button.setImage(highlightedStar, for: [.highlighted, .selected])
             
-            btn.translatesAutoresizingMaskIntoConstraints = false
-            btn.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
-            btn.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
+            // Add constraints
+            button.translatesAutoresizingMaskIntoConstraints = false
+            button.heightAnchor.constraint(equalToConstant: starSize.height).isActive = true
+            button.widthAnchor.constraint(equalToConstant: starSize.width).isActive = true
             
-            btn.addTarget(self, action: #selector(ratingButtonTapped), for: .touchUpInside)
+            // Setup the button action
+            button.addTarget(self, action: #selector(ratingButtonTapped(button:)), for: .touchUpInside)
             
-            addArrangedSubview(btn)
+            // Add the button to the stack
+            addArrangedSubview(button)
             
-            ratingButtons.append(btn)
+            // Add the new button on the rating button array
+            ratingButtons.append(button)
         }
         
         updateButtonSelectionState()
@@ -115,5 +120,4 @@ import UIKit
             button.isSelected = index < rating
         }
     }
-
 }
